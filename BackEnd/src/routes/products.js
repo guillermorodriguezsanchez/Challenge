@@ -1,35 +1,24 @@
-const { Schema, model } = require('mongoose');
+const { Router } = require('express');
 
-// Creating the model of Event
-const VideoGameSchema = Schema({
-    _id:{
-        type: String,
-        require: true
-    },
-    name: {
-        type: String,
-        require: true
-    },
-    category: {
-        type: String,
-        require: true
-    },
-    ageToPlay:{
-        type: Number,
-    },
-    amount:{
-        type: Number,
-        default : 0
-    },
-    date:{
-        type: Date,
-        default: Date.now
-    },
-});
+const { addProduct, getProductOne, getProducts, deleteProduct, updateProduct } = require ('../controllers/products');
 
-VideoGameSchema.method('toJSON', function() {
-    const { __v, ...object } = this.toObject();
-    return object;
-})
+const router = Router();
 
-module.exports = model('VideoGame', VideoGameSchema);
+// Method GET to create the event and show the id of the event
+router.post('/', [
+], addProduct);
+
+router.delete('/:_id', [
+], deleteProduct);
+
+router.get('/', [
+], getProducts);
+
+
+router.get('/:id', [
+], getProductOne);
+
+router.put('/:id', [
+], updateProduct);
+
+module.exports = router;
