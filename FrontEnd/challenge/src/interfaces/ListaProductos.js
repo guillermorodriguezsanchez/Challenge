@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getProductsOn } from '../controllers/controllers';
+import { getProductsOn } from '../controllers/addProduct';
 
 
 export function ListaProductos (){

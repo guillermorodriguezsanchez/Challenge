@@ -2,11 +2,11 @@ import productApi from '../api/productApi';
 
 
 
+
+
 export const addProductOff  = (product) => {
     
-
     console.log("offline: ", product);
-    
 }
 
 export const addProductOn  = async (product) => {
@@ -32,11 +32,14 @@ export const getProductsOn = async () => {
 
     const res = await productApi.get('/catProduct');
 
- 
-
     return res.data.products;
 
 } 
+
+export const getProductOff = () => {
+
+    console.log("Get products offline");
+}
 
 
 /*

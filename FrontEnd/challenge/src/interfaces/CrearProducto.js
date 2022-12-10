@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {myFunction} from '../components/checkOnline';
-import {addProductOn, addProductOff} from '../controllers/controllers';
+import {addProduct} from '../controllers/addProduct';
 
 export default function CrearProducto(){
 
@@ -19,12 +19,8 @@ export default function CrearProducto(){
             amount:amount
         }
 
-        const check = myFunction();
-        if(check == true){
-            addProductOn(product)
-        }else{
-            addProductOff(product)
-        }
+        addProduct(product);
+        
     }
 
     return(
