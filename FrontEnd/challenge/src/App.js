@@ -1,16 +1,17 @@
 
 import './App.css';
 
+import ListaProductos from './interfaces/ListaProductos';
+import CrearProducto from './interfaces/CrearProducto';
 
 function App() {
   return (
     
     <div className="App">
-      <p>Click the button to see if the browser is online.</p>
-
-        <button onclick="getData()">Add product</button>
-        
-      <p id="demo"></p>
+      
+      <h1>CHALLENGE</h1>
+      <ListaProductos/>
+      <CrearProducto/>
     </div>
   );
 }

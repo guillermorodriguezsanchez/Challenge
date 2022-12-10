@@ -1,6 +1,6 @@
  export function myFunction() {
 
-    checked = false;
+    let checked = false;
 
     if(navigator.onLine == true){
         

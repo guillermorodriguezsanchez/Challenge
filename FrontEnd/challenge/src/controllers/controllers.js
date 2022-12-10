@@ -1,16 +1,32 @@
-import {myFunction} from '../components/checkOnline';
+import productApi from '../api/productApi';
 
-export const GetData  = () => {
+
+
+export const getDataOff  = (product) => {
     
-    check = myFunction();
 
-    if(check == true){
+    console.log("offline: ", product);
+    
+}
 
-    }else{
-        
-    }
+export const getDataOn  = (product) => {
+    
+   
+    const name = product.name;
+    const description = product.description;
+    const price = product.price;
+    const amount = product.amount;
+    
+
+    productApi.post('/catProduct', {
+        name,
+        description,
+        price,
+        amount
+    })
 
 
+    console.log("online", product);
 }
 
 /*
