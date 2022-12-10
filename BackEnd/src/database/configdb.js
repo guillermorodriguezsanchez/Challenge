@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const dbConnection = async() => {
 
     try {
@@ -10,7 +11,7 @@ const dbConnection = async() => {
             //useCreateIndex: true,
             //useFindAndModify: false
         });
-
+        
         console.log('DB online');
 
     } catch (error) {
