@@ -2,14 +2,14 @@ import productApi from '../api/productApi';
 
 
 
-export const getDataOff  = (product) => {
+export const addProductOff  = (product) => {
     
 
     console.log("offline: ", product);
     
 }
 
-export const getDataOn  = (product) => {
+export const addProductOn  = async (product) => {
     
    
     const name = product.name;
@@ -18,16 +18,26 @@ export const getDataOn  = (product) => {
     const amount = product.amount;
     
 
-    productApi.post('/catProduct', {
+    await productApi.post('/catProduct', {
         name,
         description,
         price,
         amount
     })
 
-
     console.log("online", product);
 }
+
+export const getProductsOn = async () => {
+
+    const res = await productApi.get('/catProduct');
+
+ 
+
+    return res.data.products;
+
+} 
+
 
 /*
 const getProductsOnline = async() => {
