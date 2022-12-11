@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { getProductOff, getProductsOn } from '../controllers/getProduct';
 import { getProduct, syncronised } from '../middleware/middleware';
 
@@ -11,17 +11,19 @@ export function ListaProductos (){
         syncronised();
     },[])
 
-    useEffect(()=>{
+    useLayoutEffect(() => {
         setData();
-    },[])
-    
-    
+    }, [dataProducts])
 
+    /*useEffect(()=>{
+        setData();
+    },[dataProducts]);*/
+    
     // Set the data from the BackEnd or LocalStorage
     const setData = async() => {
 
         const res = await getProduct();
-        console.log("res:",res);
+        //console.log("res:",res);
         setdataProducts(res);
         
     }

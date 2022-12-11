@@ -65,8 +65,8 @@ export const syncronised = async() => {
                 console.log(productsOff[i]);
                 console.log("b:", b);
                 if(b == false){
-                    addProductOn(productsOff[2]);
-                    console.log(productsOff[2]);
+                 await addProductOn(productsOff[i]);
+                    console.log(productsOff[i]);
                 }
             }
             
