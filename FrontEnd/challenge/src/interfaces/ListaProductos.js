@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getProductsOn } from '../controllers/addProduct';
+import { getProductOff, getProductsOn } from '../controllers/getProduct';
+import { getProduct, syncronised } from '../middleware/middleware';
 
 
 export function ListaProductos (){
@@ -7,15 +8,23 @@ export function ListaProductos (){
     const[dataProducts, setdataProducts] = useState([]);
 
     useEffect(()=>{
+        syncronised();
+    },[])
+
+    useEffect(()=>{
         setData();
-    },[dataProducts])
+    },[])
+    
+    
 
-
+    // Set the data from the BackEnd or LocalStorage
     const setData = async() => {
-        const res = await getProductsOn();
-        setdataProducts(res);
-    }
 
+        const res = await getProduct();
+        console.log("res:",res);
+        setdataProducts(res);
+        
+    }
 
     return(
         <div>

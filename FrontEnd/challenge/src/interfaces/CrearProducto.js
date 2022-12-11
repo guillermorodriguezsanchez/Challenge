@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {myFunction} from '../components/checkOnline';
-import {addProduct} from '../controllers/addProduct';
+import {addProduct} from '../middleware/middleware';
 
 export default function CrearProducto(){
 
@@ -10,7 +9,7 @@ export default function CrearProducto(){
     const[price,setPrice] = useState('');
     const[amount,setAmount] = useState('');
 
-    function addProduct(){
+    function addProductC(){
 
         var product = {
             name:name,
@@ -53,7 +52,7 @@ export default function CrearProducto(){
                         <input type="number" className = 'form-control' value={amount} onChange={(e) =>{setAmount(e.target.value)}}></input>
                     </div>
 
-                    <button onClick={addProduct} className= "btn btn-success">Save Product</button>
+                    <button onClick={addProductC} className= "btn btn-success">Save Product</button>
 
 
                 </div>
