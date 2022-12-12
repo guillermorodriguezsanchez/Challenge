@@ -46,7 +46,8 @@ export const addProductOn  = async (product) => {
         price,
         amount
     })
-
+    console.log("product:", product);
+    //productsOff(product);
     //productsOff(product);
 
     console.log("online", product);

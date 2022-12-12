@@ -27,8 +27,9 @@ export const getProductOff = () =>  {
         products.push(product);
     }
 
+
+
     // Returning products
-    console.log("Get products offline:", localStorage.length);
     return products;
     
 }

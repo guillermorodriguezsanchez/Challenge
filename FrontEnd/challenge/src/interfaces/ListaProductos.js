@@ -10,7 +10,7 @@ export function ListaProductos (){
     useEffect(()=>{
         syncronised();
     },[])
-
+    
     useLayoutEffect(() => {
         setData();
     }, [dataProducts])

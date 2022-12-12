@@ -5,7 +5,7 @@ import { getProductOff, getProductsOn } from "../controllers/getProduct";
 
 // myFunction -> component to check if the user is online or offline
 const check = myFunction();
-console.log(check);
+
 export const addProduct = (product) => {
  
     if(check){
@@ -23,8 +23,6 @@ export const addProduct = (product) => {
 
 export const getProduct = async() => {
     
-    
-
     if(check){
        
         // Get products from the Back End -> online
@@ -42,6 +40,7 @@ export const syncronised = async() => {
 
     // Check if the user is online or not
     if(check){
+        
         // If he is online GET products from LocalStorage
         let productsOff = getProductOff();
         console.log(productsOff);
@@ -60,13 +59,14 @@ export const syncronised = async() => {
                     }else{
                         b = false;
                     }
+                    
                 }
+
                 console.log("i:", i);
                 console.log(productsOff[i]);
                 console.log("b:", b);
                 if(b == false){
-                 await addProductOn(productsOff[i]);
-                    console.log(productsOff[i]);
+                    await addProductOn(productsOff[i]); 
                 }
             }
             
@@ -85,8 +85,9 @@ export const syncronised = async() => {
 
         } catch (error) {
             
-        }
-         
+        }    
+    }else{
+        console.log("offline");
     }
 }
 
