@@ -1,11 +1,5 @@
  export function myFunction() {
 
-   /*if (pingserver.height>0) {
-      alert("Online");
-   } else {
-      alert("Offline");
-   }*/
-
     let checked = false;
 
     if(navigator.onLine){

@@ -6,33 +6,27 @@ import { getProduct, syncronised } from '../middleware/middleware';
 export function ListaProductos (){
 
     const[dataProducts, setdataProducts] = useState([]);
+    const[data, set] = useState(false); 
 
     useEffect(()=>{
-        syncronised();
-    },[])
-    
-    useLayoutEffect(() => {
         setData();
-    }, [dataProducts])
-
-    /*useEffect(()=>{
-        setData();
-    },[dataProducts]);*/
+        
+    },[data]);
     
     // Set the data from the BackEnd or LocalStorage
-    const setData = async() => {
+    const setData = async () => {
 
-        const res = await getProduct();
+        const res =  await getProduct();
         //console.log("res:",res);
         setdataProducts(res);
-        
+        set(true);
     }
 
     return(
         <div>
             <h2>Product List</h2>
             <ul>
-                {dataProducts.map((item) => <li key={item.id}>{item.name}</li>)}
+                {dataProducts.map((item) => <li key={item.name}>{item.name}</li>)}
       </ul>
         </div>
     )

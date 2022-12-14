@@ -1,4 +1,5 @@
 import productApi from '../api/productApi';
+import { setSync } from '../components/sync';
 import { getProductOff } from './getProduct';
 
 
@@ -24,6 +25,7 @@ export const addProductOff  = (product) => {
     }
     if(b == false ) {
         productsOff(product); 
+        setSync(false);
     }
        
 
@@ -46,6 +48,8 @@ export const addProductOn  = async (product) => {
         price,
         amount
     })
+
+    setSync(false);
     console.log("product:", product);
     //productsOff(product);
     //productsOff(product);
