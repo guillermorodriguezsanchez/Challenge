@@ -11,6 +11,7 @@ const addProduct = async (req, res = response) => {
         const _id = uuidv4();
 
         const existNameProduct = await Product.findOne({name: name});
+        
         // Checking if the name of the event is already in the database
         if (existNameProduct) {
             return res.status(400).json({
@@ -19,6 +20,8 @@ const addProduct = async (req, res = response) => {
             });
         }
         
+     
+
         // If the event is not exists yet.
         // A new event is created 
         const product = new Product({ _id, name, description, price, amount});
