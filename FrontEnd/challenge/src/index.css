@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+.content-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.styled-table thead tr 
+{ background-color: #980081; color: #ffffff; text-align: center}
+
+.styled-table th, .styled-table td { padding: 12px 15px; }
+.styled-table tbody tr { border-bottom: 1px solid #dddddd; } 
+.styled-table tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
+.styled-table tbody tr:last-of-type { border-bottom: 2px solid #009879; }
+
+
+.container {
+  width: 80%; /* set the width of the container to 80% */
+  margin: 0 auto; /* center the container horizontally */
+}
+
+.row {
+  margin-bottom: 20px; /* add a bottom margin to each row */
+}
+
+h2 {
+  text-align: center; /* center the text in the h2 element */
+}
+
+.form-label {
+  font-weight: bold; /* make the labels bold */
+}
+
+input[type='text'], input[type='number'] {
+  padding: 12px 15px; /* add padding to the input elements */
+  border: 1px solid #dddddd; /* add a border to the input elements */
+}
+
+input[type='text']:focus, input[type='number']:focus {
+  border: 2px solid #980081; /* change the border color when the input is focused */
+  outline: none; /* remove the outline when the input is focused */
+}
+
+.btn {
+  padding: 12px 30px; /* add padding to the button */
+  margin-top: 20px; /* add a top margin to the button */
+  background-color: #980081; /* set the background color of the button */
+  color: white; /* set the text color of the button */
+  border: none; /* remove the border from the button */
+  cursor: pointer; /* change the cursor to a pointer when the button is hovered over */
+}
+
+.btn:hover {
+  background-color: #7f006e; /* change the background color of the button when it is hovered over */
+}

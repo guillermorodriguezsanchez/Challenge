@@ -9,10 +9,18 @@ function App() {
   return (
     
     <div className="App">
+      <h1 style={{color : 'red' , background : 'lightblue'  }}>Company desing challenge</h1>
+      <div > 
+        <div>
+                  <ListaProductos />
+        </div>
+
+            <div> 
+                    <CrearProducto/>
+              </div> 
+         </div>
       
-      <h1>CHALLENGE</h1>
-      <ListaProductos/>
-      <CrearProducto/>
+     
     </div>
   );
 }

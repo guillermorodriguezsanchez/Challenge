@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {addProduct} from '../middleware/middleware';
-
+import '../index.css'
 export default function CrearProducto(){
 
     //Hooks
@@ -25,34 +25,34 @@ export default function CrearProducto(){
     return(
 
         <div className='container'>
-            <div className='row'>
+            
                 <h2>Add a new product</h2>
-            </div>
+    
 
-            <div className='row'>
-                <div className='col-sm-6 offset-3'>
+            <div>
+                <div>
 
-                    <div className='mb-3'>
-                        <label htmlFor='name' className='form-label'>Name:</label>
-                        <input type="text" className = 'form-control' value={name} onChange={(e) => {setName(e.target.value)}}></input>
+                    <div className='row'>
+                        <label htmlFor='name' className='form-label'>Name: </label>
+                        <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}></input>
                     </div>
 
-                    <div className='mb-3'>
-                        <label htmlFor='description' className='form-label'>Description:</label>
-                        <input type="text" className = 'form-control' value={description} onChange={(e) => {setDescription(e.target.value)}}></input>
+                    <div className='row'>
+                        <label htmlFor='description' className='form-label'>Description: </label>
+                        <input type="text"  value={description} onChange={(e) => {setDescription(e.target.value)}}></input>
                     </div>
 
-                    <div className='mb-3'>
-                        <label htmlFor='price' className='form-label'>Price:</label>
-                        <input type="number" className = 'form-control' value={price} onChange={(e) =>{setPrice(e.target.value)}}></input>
+                    <div className='row'>
+                        <label htmlFor='price' className='form-label'>Price: </label>
+                        <input type="number"  value={price} onChange={(e) =>{setPrice(e.target.value)}}></input>
                     </div>
 
-                    <div className='mb-3'>
-                        <label htmlFor='amount' className='form-label'>Amount:</label>
-                        <input type="number" className = 'form-control' value={amount} onChange={(e) =>{setAmount(e.target.value)}}></input>
+                    <div className='row'>
+                        <label htmlFor='amount' className='form-label'>Amount: </label>
+                        <input type="number"  value={amount} onChange={(e) =>{setAmount(e.target.value)}}></input>
                     </div>
 
-                    <button onClick={addProductC} className= "btn btn-success">Save Product</button>
+                    <button onClick={addProductC} className= "btn">Save Product</button>
 
 
                 </div>

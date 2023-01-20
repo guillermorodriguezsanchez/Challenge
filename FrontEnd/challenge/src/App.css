@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+.tabla1  {
+border-bottom: 1px solid #ddd;
+padding: 15px;
+text-align: center;
+}
