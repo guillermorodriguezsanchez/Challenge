@@ -22,6 +22,10 @@ export default function CrearProducto(){
         
     }
 
+    function refreshPage() {
+        window.location.reload(false);
+      }
+
     return(
 
         <div className='container'>
@@ -52,7 +56,7 @@ export default function CrearProducto(){
                         <input type="number"  value={amount} onChange={(e) =>{setAmount(e.target.value)}}></input>
                     </div>
 
-                    <button onClick={addProductC} className= "btn">Save Product</button>
+                    <button onClick={ () => {addProductC();refreshPage();}} className= "btn">Save Product</button>
 
 
                 </div>
