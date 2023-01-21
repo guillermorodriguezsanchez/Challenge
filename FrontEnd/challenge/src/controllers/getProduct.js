@@ -1,9 +1,4 @@
 import productApi from '../api/productApi';
-import React, { useState } from 'react';
-
-
-
-
 
 
 export const getProductsOn = async () => {
@@ -26,9 +21,6 @@ export const getProductOff = () =>  {
         let product = JSON.parse(localStorage.getItem(k));
         products.push(product);
     }
-
-
-
     // Returning products
     return products;
     
