@@ -1,17 +1,20 @@
- export function myFunction() {
+import isOnline from 'is-online';
 
-    let checked = false;
-
-    if(navigator.onLine){
-        alert("online");
-        checked = true;
-    }else{
-        alert("offline");
-        checked = false;
+export async function myFunction() {
+    let online;
+    try {
+        online = await isOnline();
+        if(online) {
+            //alert("online");
+        } else {
+            //alert("offline");
+        }
+    } catch (error) {
+        console.error(`Error checking online status: ${error}`);
     }
-
-    return checked;
-  
+    console.log("status:", online);
+    return online;
 }
+
 
 
