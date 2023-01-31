@@ -1,6 +1,6 @@
 import isOnline from 'is-online';
 
-export async function myFunction() {
+export const  myFunction = async() => {
     let online;
     try {
         online = await isOnline();

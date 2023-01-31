@@ -25,7 +25,7 @@ useEffect(() => {
   const interval = setInterval(async () => {
     const checkValue = await myFunction();
     setCheck(checkValue);
-  }, 5000);
+  }, 1000);
   return () => clearInterval(interval);
 }, []);
 
@@ -33,7 +33,7 @@ useEffect(() => {
   return (
     
     <div className="App">
-      <h1 style={{color : 'red' , background : 'lightblue'  }}>Company desing challenge</h1>
+      <h1 style={{color : 'red' , background : 'lightblue'  }}>Company Desing Challenge</h1>
       <NotificationContainer />
       <div > 
         <div>

@@ -5,20 +5,28 @@ import { getProductOff, getProductsOn } from "../controllers/getProduct";
 import { syncOFFtoON, syncONtoOFF } from "../controllers/syncronised";
 
 // myFunction -> component to check if the user is online or offline
-const check = myFunction();
+function refreshPage() {
+    window.location.reload(false);
+  }
 
-export const addProduct = (product) => {
-
+export const addProduct = async(product) => {
+    let check = await myFunction();
+   
     check ? addProductOn(product) : addProductOff(product);
+    refreshPage();
 }
 
 export const getProduct = async() => {
+    let check = await myFunction();
+    
     const res = check ? await getProductsOn() : getProductOff();
+    
     syncronised();
     return res;
 }
 
 export const syncronised = async() => {
+    let check = await myFunction();
     if(check && !getCheckSync()){
         const productsOff = getProductOff();
         const productsOn = await getProductsOn();
