@@ -3,9 +3,14 @@ import { setSync } from '../components/sync';
 import { getProductOff } from './getProduct';
 
 const addProductToLocalStorage = (product) => {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products));
+
+    let i ;
+    // Calling the LocalStorage to store the product.
+    if(localStorage.length >= 0){
+        i = localStorage.length + 1;
+    }
+    localStorage.setItem(`product${i}`, JSON.stringify(product));
+   
 }
 
 export const addProductOff = (product) => {

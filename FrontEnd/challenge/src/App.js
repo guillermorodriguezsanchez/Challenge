@@ -9,23 +9,32 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 function App() {
 
+
+
 const [check, setCheck] = useState(null);
 
 useEffect(() => {
   if (check !== null) {
     if (check) {
+      console.log("online");
       NotificationManager.success('Online');
     } else {
+      console.log("offline");
       NotificationManager.error('Offline');
+     
     }
   }
 }, [check]);
 
+
+
 useEffect(() => {
+  
   const interval = setInterval(async () => {
     const checkValue = await myFunction();
     setCheck(checkValue);
-  }, 5000);
+
+  }, 1000);
   return () => clearInterval(interval);
 }, []);
 
@@ -33,11 +42,11 @@ useEffect(() => {
   return (
     
     <div className="App">
-      <h1 style={{color : 'red' , background : 'lightblue'  }}>Company desing challenge</h1>
+      <h1 style={{color : 'red' , background : 'lightblue'  }}>Company design challenge</h1>
       <NotificationContainer />
       <div > 
         <div>
-                  <ListaProductos />
+                  <ListaProductos /> 
         </div>
 
             <div className="add_product"> 
