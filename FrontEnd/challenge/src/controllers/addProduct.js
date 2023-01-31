@@ -10,8 +10,13 @@ const addProductToLocalStorage = (product) => {
     if(localStorage.length >= 0){
         i = localStorage.length + 1;
     }
+<<<<<<< HEAD
     localStorage.setItem(`product${i}`, JSON.stringify(transformProductFromLocalStorage(product)));
 
+=======
+    localStorage.setItem(`product${i}`, JSON.stringify(product));
+   
+>>>>>>> 1cc6465c9e8d9242c8e6baa33347a0e547518cd1
 }
 
 export const addProductOff = (product) => {
