@@ -17,7 +17,7 @@ export const syncOFFtoON = async (productOFF, productON) => {
     productOFF.forEach(async product => {
         if (!productON.find(p => p.name === product.name)) {
             await addProductOn(product);
-            console.log("Product ADD");
+            console.log("Product updated from productOFF to productON");
         }
     });
 }
