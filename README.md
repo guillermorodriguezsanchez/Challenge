@@ -1,11 +1,3 @@
 # Challenge
 
-Design a template/prototype architecture in which the same application would be 
-able to work when the ERP database is not available. In other words, the REST API 
-should be able to access the same data locally. This solution should work for any 
-service, so middleware must not depend on the structure of the data being 
-exchanged.
-The purpose of the challenge is not to make the app work offline but to find a 
-generic way (reusable in other apps) to have the data updated for offline use (the 
-data update is either manually requested by the user from the app or can be done 
-automatically from a background task of the app).
+We used NodeJS to develop the Backend and ReactJS to build the Frontend of the application. The challenge was to create a generic architecture that would allow the REST API to access data locally when the ERP database is not available. The solution should be reusable for other services and the middleware should be independent of the data structure being exchanged. The goal was not to make the app work offline but to find a way to update the data for offline use, either through manual user request or automatic background task within the app
